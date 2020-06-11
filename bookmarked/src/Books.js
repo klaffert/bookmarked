@@ -4,7 +4,7 @@ import BookCard from './BookCard';
 class Books extends React.Component {
   render() {
     return (
-      <div>
+      <div class="cards">
         {this.props.books.map((book, index) => (
           <div key={index}>
             <BookCard book={book} />

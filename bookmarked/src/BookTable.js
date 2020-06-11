@@ -4,6 +4,8 @@ import Books from './Books';
 import SearchBar from './SearchBar';
 import LoadingSpinner from './LoadingSpinner';
 
+import './App.css';
+
 class BookTable extends React.Component {
   state = {
     query: '',
@@ -41,8 +43,8 @@ class BookTable extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>BookMarked</h1>
+      <div className="app">
+        <h1 className="app__title">BookMarked</h1>
         <SearchBar
           handleSearch={this.handleSearch}
           handleOnChange={this.handleOnChange}
