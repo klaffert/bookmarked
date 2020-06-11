@@ -3,7 +3,6 @@ import BookCard from './BookCard';
 
 class Books extends React.Component {
   render() {
-    console.log(this.state);
     return (
       <div>
         {this.props.books.map((book, index) => (

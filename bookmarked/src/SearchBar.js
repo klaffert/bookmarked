@@ -3,13 +3,14 @@ import React from 'react';
 class SearchBar extends React.Component {
   render() {
     return (
-      <form>
+      <form onSubmit={(event) => this.props.handleSearch(event)}>
         <input
           type="text"
           placeholder="Search for books..."
-          value={this.props.searchValue}
+          value={this.props.query}
+          onChange={(event) => this.props.handleOnChange(event)}
         />
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     );
   }
