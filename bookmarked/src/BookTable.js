@@ -12,27 +12,29 @@ class BookTable extends React.Component {
     };
   }
 
-  fetchBooks = (searchInput) => {
-    var searchUrl = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`;
+  componentDidMount() {
+    this.fetchBooks();
+  }
 
-    fetch(searchUrl)
-      .then((response) => {
-        console.log(response.json());
-      })
-      .then((data) => {
+  fetchBooks(searchInput) {
+    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`;
+
+    fetch(API_URL).then((response) => {
+      response.json().then((data) => {
         this.setState({
           books: data.items,
         });
-        console.log(data.items);
+        console.log(this.state.books);
       });
-  };
+    });
+  }
 
   render() {
     return (
       <div className="App">
         <h1>BookMarked</h1>
-        <button onclick={this.fetchBooks}>click me</button>
         <SearchBar
+          onSearch={this.fetchBooks}
           searchValue={this.state.searchValue}
           books={this.state.books}
         />

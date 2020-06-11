@@ -3,10 +3,10 @@ import './App.css';
 
 class BookCard extends React.Component {
   render() {
-    const book = this.props.book;
+    const book = this.props.book.volumeInfo;
     return (
       <div class="card">
-        <img src={this.props.book.image} alt="book-cover" />
+        <img src={book.imageLinks.smallThumbnail} alt="book-cover" />
         <div class="container">
           <h4>{book.title}</h4>
           <p>{book.author}</p>

@@ -3,7 +3,7 @@ import React from 'react';
 class SearchBar extends React.Component {
   render() {
     return (
-      <form onSubmit={this.handleSearch}>
+      <form>
         <input
           type="text"
           placeholder="Search for books..."
