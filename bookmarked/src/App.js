@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+import BookTable from './BookTable';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BookTable books={BOOKS} />
     </div>
   );
 }
+
+const BOOKS = [
+  {
+    title: 'Harry Potter',
+    author: 'J.K. Rowling',
+    publisher: 'Random House',
+    image: 'https://picsum.photos/200',
+  },
+  {
+    title: 'The Dispossessed',
+    author: 'Ursula Le Guin',
+    publisher: 'Random House',
+    image: 'https://picsum.photos/200',
+  },
+  {
+    title: 'Turn of the Key',
+    author: 'Ruth Ware',
+    publisher: 'Random House',
+    image: 'https://picsum.photos/200',
+  },
+  {
+    title: 'Crime and Punishment',
+    author: 'Russian man',
+    publisher: 'Random House',
+    image: 'https://picsum.photos/200',
+  },
+];
 
 export default App;
