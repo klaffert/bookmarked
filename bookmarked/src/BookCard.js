@@ -8,7 +8,7 @@ class BookCard extends React.Component {
       <div class="card">
         <img src={book.imageLinks.smallThumbnail} alt="book-cover" />
         <div class="container">
-          <h4>Title: {book.title}</h4>
+          <p>Title: {book.title}</p>
           <p>Author: {book.authors}</p>
           <p>Publisher: {book.publisher}</p>
         </div>

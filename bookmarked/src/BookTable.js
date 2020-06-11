@@ -32,10 +32,6 @@ class BookTable extends React.Component {
     });
   }
 
-  // handleSearch = () => {
-  //   this.fetchBooks(this.state.query);
-  // };
-
   handleSearch = (event) => {
     event.preventDefault();
     this.fetchBooks(this.state.query);
@@ -45,7 +41,6 @@ class BookTable extends React.Component {
     return (
       <div className="App">
         <h1>BookMarked</h1>
-        {/* <button onClick={this.handleSearch}>Click ME</button> */}
         <SearchBar
           handleSearch={this.handleSearch}
           handleOnChange={this.handleOnChange}

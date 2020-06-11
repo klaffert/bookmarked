@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
           value={this.props.query}
           onChange={(event) => this.props.handleOnChange(event)}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Search</button>
       </form>
     );
   }
