@@ -2,16 +2,14 @@ import React from 'react';
 
 import Books from './Books';
 import SearchBar from './SearchBar';
+import LoadingSpinner from './LoadingSpinner';
 
 class BookTable extends React.Component {
   state = {
     query: '',
     results: [],
+    loading: false,
   };
-
-  // componentDidMount() {
-  //   this.fetchBooks();
-  // }
 
   handleOnChange = (event) => {
     this.setState({
@@ -22,12 +20,16 @@ class BookTable extends React.Component {
   fetchBooks(searchInput) {
     const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`;
 
+    this.setState({
+      loading: true,
+    });
+
     fetch(API_URL).then((response) => {
       response.json().then((data) => {
         this.setState({
           results: data.items,
+          loading: false,
         });
-        console.log(this.state.results);
       });
     });
   }
@@ -47,7 +49,11 @@ class BookTable extends React.Component {
           query={this.state.query}
           books={this.state.results}
         />
-        <Books books={this.state.results} />
+        {this.state.loading ? (
+          <LoadingSpinner />
+        ) : (
+          <Books books={this.state.results} />
+        )}
       </div>
     );
   }
