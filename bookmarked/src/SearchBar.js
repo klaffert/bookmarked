@@ -1,25 +1,15 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
-  }
-
-  handleFilterTextChange(e) {
-    this.props.onFilterTextChange(e.target.value);
-  }
-
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSearch}>
         <input
           type="text"
           placeholder="Search for books..."
-          value={this.props.filterText}
-          onChange={this.handleFilterTextChange}
+          value={this.props.searchValue}
         />
-        <button>Search</button>
+        <button>Submit</button>
       </form>
     );
   }

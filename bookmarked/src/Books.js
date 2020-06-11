@@ -3,16 +3,16 @@ import BookCard from './BookCard';
 
 class Books extends React.Component {
   render() {
-    const filterText = this.props.filterText;
-
-    const cards = [];
-    this.props.books.forEach((book) => {
-      if (book.title.indexOf(filterText) === -1) {
-        return;
-      }
-      cards.push(<BookCard book={book} key={book.title} />);
-    });
-    return <div>{cards}</div>;
+    console.log(this.state);
+    return (
+      <div>
+        {this.props.books.map((book, index) => (
+          <div key={index}>
+            <BookCard book={book} />
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 

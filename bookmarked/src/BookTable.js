@@ -7,26 +7,36 @@ class BookTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterText: '',
+      searchValue: '',
+      books: [],
     };
-    this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
   }
 
-  handleFilterTextChange(filterText) {
-    this.setState({
-      filterText: filterText,
-    });
-  }
+  fetchBooks = (searchInput) => {
+    var searchUrl = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`;
+
+    fetch(searchUrl)
+      .then((response) => {
+        console.log(response.json());
+      })
+      .then((data) => {
+        this.setState({
+          books: data.items,
+        });
+        console.log(data.items);
+      });
+  };
 
   render() {
     return (
       <div className="App">
         <h1>BookMarked</h1>
+        <button onclick={this.fetchBooks}>click me</button>
         <SearchBar
-          filterText={this.state.filterText}
-          onFilterTextChange={this.handleFilterTextChange}
+          searchValue={this.state.searchValue}
+          books={this.state.books}
         />
-        <Books books={this.props.books} filterText={this.state.filterText} />
+        <Books books={this.state.books} />
       </div>
     );
   }
