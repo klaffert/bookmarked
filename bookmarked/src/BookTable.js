@@ -20,7 +20,7 @@ class BookTable extends React.Component {
   };
 
   fetchBooks(searchInput) {
-    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`;
+    const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}&maxResults=36`;
 
     this.setState({
       loading: true,
@@ -44,7 +44,9 @@ class BookTable extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1 className="app__title">BookMarked</h1>
+        <div className="bookmark">
+          <span className="logo">bookmarked</span>
+        </div>
         <SearchBar
           handleSearch={this.handleSearch}
           handleOnChange={this.handleOnChange}

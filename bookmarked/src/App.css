@@ -17,7 +17,6 @@ html {
 
   /* Center and scale the image nicely */
   background-position: center;
-  /* background-repeat: no-repeat; */
   background-size: cover;
 }
 
@@ -30,10 +29,13 @@ body {
 
 img {
   max-width: 100%;
+  height: 40vh;
+  object-fit: fill;
 }
 
 form {
   text-align: center;
+  padding-top: 150px;
 }
 
 input {
@@ -46,15 +48,48 @@ input::placeholder {
   font-family: 'Courier Prime', monospace;
 }
 
+button[type='submit'] {
+  font-family: 'Courier Prime', monospace;
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius: 40px;
+  background: #fff;
+  border: transparent;
+  color: green;
+  letter-spacing: 1px;
+  text-shadow: 0;
+}
+
 .app__title {
   font-family: 'Montserrat', sans-serif;
 }
 
+.bookmark {
+  width: 300px;
+  height: 0;
+  border-bottom: 40px solid #8f0b0be8;
+  border-top: 40px solid #8f0b0be8;
+  border-right: 40px solid transparent;
+  float: right;
+  margin-bottom: 20px;
+  font-size: 29px;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: 20px;
+}
+
+.logo {
+  color: white;
+  position: relative;
+  top: -13px;
+  text-align: center;
+  right: -35px;
+}
+
 .cards {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1rem; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 20px;
@@ -63,12 +98,27 @@ input::placeholder {
 
 .card {
   display: flex;
-  background-color: whitesmoke;
+  background-color: rgb(255, 255, 255);
   border: 1px solid #ccc;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .card__container {
-  padding: 8px;
+  padding: 10px;
+}
+
+.card__btn {
+  border-radius: 50px;
+  border: transparent;
+  background-color: rgb(68, 155, 68);
+  font-family: 'Courier Prime', monospace;
+  padding: 8px 30px;
+}
+
+.card__btn:hover,
+.card__btn:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  cursor: pointer;
 }
