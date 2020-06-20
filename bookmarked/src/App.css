@@ -75,7 +75,7 @@ input[type='text'] {
 .loading {
   margin: 40px;
   text-align: center;
-  color: green;
+  color: black;
   font-size: 30px;
 }
 
