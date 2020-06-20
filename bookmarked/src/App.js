@@ -11,31 +11,4 @@ function App() {
   );
 }
 
-// const BOOKS = [
-//   {
-//     title: 'Harry Potter',
-//     author: 'J.K. Rowling',
-//     publisher: 'Random House',
-//     image: 'https://picsum.photos/200',
-//   },
-//   {
-//     title: 'The Dispossessed',
-//     author: 'Ursula Le Guin',
-//     publisher: 'Random House',
-//     image: 'https://picsum.photos/200',
-//   },
-//   {
-//     title: 'Turn of the Key',
-//     author: 'Ruth Ware',
-//     publisher: 'Random House',
-//     image: 'https://picsum.photos/200',
-//   },
-//   {
-//     title: 'Crime and Punishment',
-//     author: 'Russian man',
-//     publisher: 'Random House',
-//     image: 'https://picsum.photos/200',
-//   },
-// ];
-
 export default App;

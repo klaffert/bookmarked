@@ -6,18 +6,20 @@ class BookCard extends React.Component {
     const book = this.props.book.volumeInfo;
     return (
       <div>
-        <div class="card">
+        <div className="card">
+          {/* <img className="card__image" src={book.imageLinks.smallThumbnail} /> */}
+
           <img
-            class="card__image"
-            src={book.imageLinks.smallThumbnail}
+            className="card__image"
+            src={book.imageLinks ? book.imageLinks.thumbnail : undefined}
             alt="book-cover"
           />
-          <div class="card__container">
+          <div className="card__container">
             <div className="card__content">
-              <p class="card__title">{book.title}</p>
-              <p class="card__text">{book.authors}</p>
-              <p class="card__text">{book.publisher}</p>
-              <button class="btn btn--block card__btn">Details</button>
+              <p className="card__title">{book.title}</p>
+              <p className="card__text">{book.authors}</p>
+              <p className="card__text">{book.publisher}</p>
+              <button className="btn btn--block card__btn">Details</button>
             </div>
           </div>
         </div>

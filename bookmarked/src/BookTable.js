@@ -11,8 +11,6 @@ class BookTable extends React.Component {
     query: '',
     results: [],
     loading: false,
-    fields: {},
-    errors: {},
   };
 
   handleOnChange = (event) => {
@@ -47,27 +45,9 @@ class BookTable extends React.Component {
       });
   }
 
-  handleValidation = () => {
-    let fields = this.state.fields;
-    let errors = {};
-    let formIsValid = true;
-
-    if (!fields['query']) {
-      formIsValid = false;
-      errors['query'] = 'Cannot be empty';
-    }
-    this.setState({ errors: errors });
-    return formIsValid;
-  };
-
   handleSearch = (event) => {
     event.preventDefault();
-    // Handle empty input form
-    if (!this.handleValidation()) {
-      alert('Input cannot be empty');
-    } else {
-      this.fetchBooks(this.state.query);
-    }
+    this.fetchBooks(this.state.query);
   };
 
   render() {
