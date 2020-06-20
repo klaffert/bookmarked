@@ -48,18 +48,30 @@ input::placeholder {
   font-family: 'Courier Prime', monospace;
 }
 
+input[type='text'] {
+  text-align: center;
+}
+
 button[type='submit'] {
   font-family: 'Courier Prime', monospace;
   outline: none;
   height: 40px;
   text-align: center;
-  width: 130px;
+  width: 60px;
   border-radius: 40px;
-  background: #fff;
+  background: green;
   border: transparent;
-  color: green;
+  color: white;
   letter-spacing: 1px;
   text-shadow: 0;
+  cursor: pointer;
+}
+
+.loading {
+  margin: 40px;
+  text-align: center;
+  color: green;
+  font-size: 30px;
 }
 
 .app__title {
@@ -108,12 +120,19 @@ button[type='submit'] {
   padding: 10px;
 }
 
+.card__content {
+  position: relative;
+}
+
 .card__btn {
   border-radius: 50px;
   border: transparent;
   background-color: rgb(68, 155, 68);
   font-family: 'Courier Prime', monospace;
-  padding: 8px 30px;
+  padding: 8px 20px;
+  position: absolute;
+  right: 5px;
+  top: 150px;
 }
 
 .card__btn:hover,

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LoadingSpinner = () => (
-  <div>
+  <div className="loading">
     <i className="fa fa-spinner fa-spin" /> Loading...
   </div>
 );

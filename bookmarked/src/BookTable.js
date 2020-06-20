@@ -11,6 +11,8 @@ class BookTable extends React.Component {
     query: '',
     results: [],
     loading: false,
+    fields: {},
+    errors: {},
   };
 
   handleOnChange = (event) => {
@@ -26,19 +28,46 @@ class BookTable extends React.Component {
       loading: true,
     });
 
-    fetch(API_URL).then((response) => {
-      response.json().then((data) => {
+    fetch(API_URL)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Something went wrong');
+        }
+      })
+      .then((data) => {
         this.setState({
           results: data.items,
           loading: false,
         });
+      })
+      .catch((error) => {
+        console.log(error);
       });
-    });
   }
+
+  handleValidation = () => {
+    let fields = this.state.fields;
+    let errors = {};
+    let formIsValid = true;
+
+    if (!fields['query']) {
+      formIsValid = false;
+      errors['query'] = 'Cannot be empty';
+    }
+    this.setState({ errors: errors });
+    return formIsValid;
+  };
 
   handleSearch = (event) => {
     event.preventDefault();
-    this.fetchBooks(this.state.query);
+    // Handle empty input form
+    if (!this.handleValidation()) {
+      alert('Input cannot be empty');
+    } else {
+      this.fetchBooks(this.state.query);
+    }
   };
 
   render() {

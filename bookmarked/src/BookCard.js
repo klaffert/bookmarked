@@ -13,10 +13,12 @@ class BookCard extends React.Component {
             alt="book-cover"
           />
           <div class="card__container">
-            <div class="card__title">{book.title}</div>
-            <p class="card__text">{book.authors}</p>
-            <p class="card__text">{book.publisher}</p>
-            <button class="btn btn--block card__btn">Details</button>
+            <div className="card__content">
+              <p class="card__title">{book.title}</p>
+              <p class="card__text">{book.authors}</p>
+              <p class="card__text">{book.publisher}</p>
+              <button class="btn btn--block card__btn">Details</button>
+            </div>
           </div>
         </div>
       </div>
